@@ -1,0 +1,63 @@
+<!DOCTYPE html>>
+<html>
+    <title>
+        Calculator
+    </title>
+    <body style="align-items: center;">
+        <table border="2" cellpadding=10>
+            <tr>
+                <td>
+                    Enter first number:<input type="text" id="n1"></br>
+                    Enter second number:<input type="text" id="n2"><br>
+                    <select id="op">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="%">%</option>
+                    </select>
+                    &#160 &#160
+                    <input type="button" value="=" onclick="calculate()">
+                    <p id="res"></p>
+                </td>
+            </tr>
+        </table>
+        <script>
+            function calculate()
+            {
+                var x=parseInt(document.getElementById("n1").value);
+                var y=parseInt(document.getElementById("n2").value);
+                var op=document.getElementById("op").value;
+                if(op==="+")
+                {
+                    var res=x+y;
+                    document.getElementById("res").innerHTML="total="+res;
+                }
+                else if(op==="-")
+                {
+                    var res=x-y;
+                    document.getElementById("res").innerHTML="Subtraction="+res;
+                }
+                else if(op==="*")
+                {
+                    var res=x*y;
+                    document.getElementById("res").innerHTML="Multiplication="+res;
+                }
+                else if(op==="/")
+                {
+                    var res=x/y;
+                    document.getElementById("res").innerHTML="Division="+res;
+                }
+                else if(op==="%")
+                {
+                    var res=x%y;
+                    document.getElementById("res").innerHTML="Remainder="+res;
+                }
+                else
+                {
+                    document.getElementById("res").innerHTML="Invalid Calculation";
+                }
+            }
+        </script>
+    </body>
+</html>
